@@ -55,38 +55,29 @@ function App() {
 
         {/* Dashboard Grid */}
         <main className="flex-1 p-4 lg:p-6">
-          <div className="grid grid-cols-1 xl:grid-cols-4 gap-6">
-            {/* Left Column - Weather, Map & Alerts */}
-            <div className="xl:col-span-2 space-y-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {/* Left Column - Weather, Alerts & Map */}
+            <div className="lg:col-span-2 space-y-6">
               {/* Weather Card */}
               <WeatherCard weather={weatherData} />
-
-              {/* Map Card */}
-              <MapCard />
 
               {/* Alerts Section */}
               <AlertsSection alerts={alerts} />
 
-              {/* Health Concerns - Desktop Only */}
-              <div className="hidden xl:block space-y-6">
-                <HealthConcerns concerns={healthConcerns} />
-              </div>
+              {/* Map Card - Below Alerts */}
+              <MapCard />
             </div>
 
-            {/* Right Column - Patients & Areas */}
-            <div className="xl:col-span-2 space-y-6">
-              <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-1 gap-6">
-                {/* Patients Card */}
-                <PatientsCard data={patientsData} />
+            {/* Right Column - Patients, Areas & Health Concerns */}
+            <div className="lg:col-span-1 space-y-6">
+              {/* Patients Card */}
+              <PatientsCard data={patientsData} />
 
-                {/* Affected Areas */}
-                <AffectedAreas areas={affectedAreas} />
-              </div>
+              {/* Affected Areas */}
+              <AffectedAreas areas={affectedAreas} />
 
-              {/* Health Concerns - Mobile/Tablet */}
-              <div className="xl:hidden space-y-6">
-                <HealthConcerns concerns={healthConcerns} />
-              </div>
+              {/* Health Concerns */}
+              <HealthConcerns concerns={healthConcerns} />
             </div>
           </div>
         </main>

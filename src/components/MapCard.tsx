@@ -2,8 +2,8 @@ import React from 'react';
 import { MapPin } from 'lucide-react';
 
 const MapCard: React.FC = () => {
-  // TODO: Replace with actual Google Maps API key
-  const GOOGLE_MAPS_API_KEY = 'YOUR_GOOGLE_MAPS_API_KEY_HERE';
+  // Google Maps API key
+  const GOOGLE_MAPS_API_KEY = 'AIzaSyDLvDNOOGWSkSvUsbYANjNDu3sFmFrNepQ';
   
   // Default location: Assam, India
   const defaultLocation = {
@@ -22,32 +22,18 @@ const MapCard: React.FC = () => {
       </div>
 
       <div className="relative">
-        {GOOGLE_MAPS_API_KEY === 'YOUR_GOOGLE_MAPS_API_KEY_HERE' ? (
-          // Placeholder when API key is not set
-          <div className="w-full h-64 bg-gray-100 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300">
-            <div className="text-center">
-              <MapPin className="h-12 w-12 text-gray-400 mx-auto mb-2" />
-              <p className="text-gray-600 font-medium">Map View</p>
-              <p className="text-sm text-gray-500 mt-1">Assam, India</p>
-              <p className="text-xs text-gray-400 mt-2">
-                Add Google Maps API key to display interactive map
-              </p>
-            </div>
-          </div>
-        ) : (
-          // Actual Google Maps embed when API key is provided
-          <iframe
-            src={mapUrl}
-            width="100%"
-            height="256"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="rounded-lg"
-            title="Assam Regional Map"
-          />
-        )}
+        {/* Google Maps embed */}
+        <iframe
+          src={mapUrl}
+          width="100%"
+          height="320"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          className="rounded-lg shadow-sm"
+          title="Assam Regional Map"
+        />
       </div>
 
       <div className="mt-4 flex items-center justify-between text-sm text-gray-600">
